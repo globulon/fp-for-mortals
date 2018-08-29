@@ -15,10 +15,12 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.scalaz" %% "scalaz-core" % "7.2.25" withSources(),
+  "org.scalaz" %% "scalaz-core" % "7.2.26" withSources(),
   "org.scalactic" %% "scalactic" % "3.0.5" withSources() ,
   "org.scalatest" %% "scalatest" % "3.0.5" % "test" withSources()
 )
 
 
-addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.3")
+addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.7")
+
+resolvers += Resolver.sonatypeRepo("releases")
