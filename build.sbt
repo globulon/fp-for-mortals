@@ -56,10 +56,14 @@ scalacOptions ++= Seq(
 libraryDependencies ++= Seq(
   "org.scalaz" %% "scalaz-core" % "7.2.26" withSources(),
   "org.scalactic" %% "scalactic" % "3.0.5" withSources() ,
-  "org.scalatest" %% "scalatest" % "3.0.5" % "test" withSources()
+  "org.scalatest" %% "scalatest" % "3.0.5" % "test" withSources(),
+  "com.propensive" %% "contextual" % "1.1.0" withSources()
 )
 
 
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.7")
+addCompilerPlugin(
+  "org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full
+)
 
 resolvers += Resolver.sonatypeRepo("releases")

@@ -12,8 +12,7 @@ trait DynAgents[F[_]] {
   def act(world: WorldView): F[WorldView]
 }
 
-class DynAgentsModule[F[_]: Monad](D: Drone[F], M: Machines[F])
-    extends DynAgents[F] {
+class DynAgentsModule[F[_]: Monad](D: Drone[F], M: Machines[F]) extends DynAgents[F] {
   override def initial: F[WorldView] =
     for {
       db ← D.getBacklog
