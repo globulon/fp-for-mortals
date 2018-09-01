@@ -3,6 +3,8 @@ package drone
 import fp.Epoch
 import scalaz.NonEmptyList
 
+import scala.language.higherKinds
+
 case class MachineNode(id: String)
 
 trait Machines[F[_]] {

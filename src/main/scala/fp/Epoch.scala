@@ -13,7 +13,7 @@ trait TimeShift[T <: Time] {
 protected[fp] trait TimeOps {
   implicit def toDuration(e: Epoch): Duration = Duration(e millis, MILLISECONDS)
 
-  implicit object EpochShift extends TimeShift[Epoch] {
+  implicit val epochShift: TimeShift[Epoch] = new TimeShift[Epoch] {
     override def add(d: Duration): Epoch ⇒ Epoch = e ⇒ Epoch(e.millis + d.toMillis)
 
     override def del(d: Duration): Epoch ⇒ Epoch = e ⇒ Epoch(e.millis + d.toMillis)
