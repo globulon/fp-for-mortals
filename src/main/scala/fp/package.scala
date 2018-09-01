@@ -1,1 +1,1 @@
-package object fp extends Epochs
+package object fp extends TimeOps with Data
